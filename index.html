@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<!-- https://www.youtube.com/watch?v=Y-GkMjUZsmM -->
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <title>Tic-Tac-Toe - CodeBrainer</title>
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <div id="start-screen">
+        <label for="size-picker">Choose the table's size</label>
+        <select id="size-picker">
+            <option value="3x3">3x3</option>
+            <option value="5x5">5x5</option>
+            <option value="7x7">7x7</option>
+        </select>
+        
+        <label for="player-picker">Choose number of player</label>
+        <select id="player-picker">
+            <option value="1">1</option>
+            <option value="2">2</option>
+        </select>
+        
+        <button id="start-button" onclick="startGame()">Start</button>
+    </div>
+
+    <div id="playing-screen">
+        <div id="heading">
+            <div id="player-turn-indicator"></div>
+            <button id="home-button">Home</button>
+            <div id="countdown"></div>
+        </div>
+
+        <div id="main">
+            <textarea id="turn-history" cols="30" rows="10" style="height: 10%; align-self: center;"></textarea>
+
+            <div>
+                <div class="board" id="3x3-board">
+                    <div class="cell s3" id="A1"></div>
+                    <div class="cell s3" id="A2"></div>
+                    <div class="cell s3" id="A3"></div>
+                    <div class="cell s3" id="B1"></div>
+                    <div class="cell s3" id="B2"></div>
+                    <div class="cell s3" id="B3"></div>
+                    <div class="cell s3" id="C1"></div>
+                    <div class="cell s3" id="C2"></div>
+                    <div class="cell s3" id="C3"></div>
+                </div>
+
+                <div class="board" id="5x5-board">
+                    <div class="cell s5" id="A1"></div>
+                    <div class="cell s5" id="A2"></div>
+                    <div class="cell s5" id="A3"></div>
+                    <div class="cell s5" id="A4"></div>
+                    <div class="cell s5" id="A5"></div>
+                    <div class="cell s5" id="B1"></div>
+                    <div class="cell s5" id="B2"></div>
+                    <div class="cell s5" id="B3"></div>
+                    <div class="cell s5" id="B4"></div>
+                    <div class="cell s5" id="B5"></div>
+                    <div class="cell s5" id="C1"></div>
+                    <div class="cell s5" id="C2"></div>
+                    <div class="cell s5" id="C3"></div>
+                    <div class="cell s5" id="C4"></div>
+                    <div class="cell s5" id="C5"></div>
+
+                    <div class="cell s5" id="D1"></div>
+                    <div class="cell s5" id="D2"></div>
+                    <div class="cell s5" id="D3"></div>
+                    <div class="cell s5" id="D4"></div>
+                    <div class="cell s5" id="D5"></div>
+                    <div class="cell s5" id="E1"></div>
+                    <div class="cell s5" id="E2"></div>
+                    <div class="cell s5" id="E3"></div>
+                    <div class="cell s5" id="E4"></div>
+                    <div class="cell s5" id="E5"></div>
+                </div>
+
+                <div class="board" id="7x7-board">
+                    <div class="cell s7" id="A1"></div>
+                    <div class="cell s7" id="A1"></div>
+                    <div class="cell s7" id="A1"></div>
+                    <div class="cell s7" id="A1"></div>
+                    <div class="cell s7" id="A1"></div>
+                    <div class="cell s7" id="A1"></div>
+                    <div class="cell s7" id="A1"></div>
+                    <div class="cell s7" id="A1"></div>
+                    <div class="cell s7" id="A1"></div>
+                    <div class="cell s7" id="A1"></div>
+                    <div class="cell s7" id="A1"></div>
+                    <div class="cell s7" id="A1"></div>
+                    <div class="cell s7" id="A1"></div>
+                    <div class="cell s7" id="A1"></div>
+                    <div class="cell s7" id="A1"></div>
+                    <div class="cell s7" id="A1"></div>
+                    <div class="cell s7" id="A1"></div>
+                    <div class="cell s7" id="A1"></div>
+                    <div class="cell s7" id="A1"></div>
+                    <div class="cell s7" id="A1"></div>
+                    <div class="cell s7" id="A1"></div>
+                    <div class="cell s7" id="A1"></div>
+                    <div class="cell s7" id="A1"></div>
+                    <div class="cell s7" id="A1"></div>
+                    <div class="cell s7" id="A1"></div>
+                    <div class="cell s7" id="A1"></div>
+                    <div class="cell s7" id="A1"></div>
+                    <div class="cell s7" id="A1"></div>
+                    <div class="cell s7" id="A1"></div>
+                    <div class="cell s7" id="A1"></div>
+                    <div class="cell s7" id="A1"></div>
+                    <div class="cell s7" id="A1"></div>
+                    <div class="cell s7" id="A1"></div>
+                    <div class="cell s7" id="A1"></div>
+                    <div class="cell s7" id="A1"></div>
+                    <div class="cell s7" id="A1"></div>
+                    <div class="cell s7" id="A1"></div>
+                    <div class="cell s7" id="A1"></div>
+                    <div class="cell s7" id="A1"></div>
+                    <div class="cell s7" id="A1"></div>
+                    <div class="cell s7" id="A1"></div>
+                    <div class="cell s7" id="A1"></div>
+                    <div class="cell s7" id="A1"></div>
+                    <div class="cell s7" id="A1"></div>
+                    <div class="cell s7" id="A1"></div>
+                    <div class="cell s7" id="A1"></div>
+                    <div class="cell s7" id="A1"></div>
+                    <div class="cell s7" id="A1"></div>
+                    <div class="cell s7" id="A1"></div>
+                </div>
+            </div>
+            
+            <button id="undo-button">Undo</button>
+        </div>
+
+    </div>
+
+    <div class="end-game-display" id="end-game-display">
+        <div id="end-game-message"></div>
+        <button id="restart-button">Restart</button>
+    </div>
+</body>
+
+</html>
